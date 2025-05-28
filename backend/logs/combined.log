@@ -1,0 +1,28 @@
+{"level":"info","message":"Server running in undefined mode on port 3000","service":"express-mvp-api","timestamp":"2025-05-28 09:04:36"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\Users\\pietr\\Downloads\\projeto\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-05-28 09:04:36"}
+{"level":"info","message":"Server running in undefined mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 09:15:45"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\Users\\pietr\\Downloads\\projeto\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-05-28 09:15:45"}
+{"level":"info","message":"Server running in undefined mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 09:16:43"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\Users\\pietr\\Downloads\\projeto\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-05-28 09:16:43"}
+{"level":"info","message":"Server running in undefined mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 09:16:53"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\Users\\pietr\\Downloads\\projeto\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-05-28 09:16:53"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 09:32:27"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\Users\\pietr\\Downloads\\projeto\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-05-28 09:32:27"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 09:43:39"}
+{"level":"info","message":"Successfully connected to PostgreSQL database","service":"express-mvp-api","timestamp":"2025-05-28 09:43:43"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 2081.439 ms - 114\u001b[0m","service":"express-mvp-api","timestamp":"2025-05-28 09:50:12"}
+{"level":"error","message":"Not Found - /api/register - /api/register - POST - ::1","service":"express-mvp-api","timestamp":"2025-05-28 09:50:47"}
+{"level":"info","message":"\u001b[0mPOST /api/register \u001b[33m404\u001b[0m 4.832 ms - 1270\u001b[0m","service":"express-mvp-api","timestamp":"2025-05-28 09:50:47"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 1557.895 ms - 114\u001b[0m","service":"express-mvp-api","timestamp":"2025-05-28 09:51:23"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 10:04:21"}
+{"level":"info","message":"Successfully connected to PostgreSQL database","service":"express-mvp-api","timestamp":"2025-05-28 10:04:23"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 1174.948 ms - 114\u001b[0m","service":"express-mvp-api","timestamp":"2025-05-28 10:04:40"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 1131.247 ms - 114\u001b[0m","service":"express-mvp-api","timestamp":"2025-05-28 10:06:43"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[32m201\u001b[0m 1594.500 ms - 328\u001b[0m","service":"express-mvp-api","timestamp":"2025-05-28 10:08:19"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 11:09:33"}
+{"level":"info","message":"Successfully connected to PostgreSQL database","service":"express-mvp-api","timestamp":"2025-05-28 11:09:35"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 11:18:03"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 11:18:07"}
+{"level":"info","message":"Successfully connected to PostgreSQL database","service":"express-mvp-api","timestamp":"2025-05-28 11:18:08"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 11:19:14"}
+{"level":"info","message":"Successfully connected to PostgreSQL database","service":"express-mvp-api","timestamp":"2025-05-28 11:19:16"}
