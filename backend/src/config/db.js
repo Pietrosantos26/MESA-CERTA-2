@@ -1,23 +1,21 @@
+require('dotenv').config(); // Carrega as variáveis de ambiente 
 const { Pool } = require('pg');
 const logger = require('../utils/logger');
 
-// Create a connection pool
+
 const pool = new Pool({
-  user: process.env.PGUSER,
-  host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
-  password: process.env.PGPASSWORD,
-  port: process.env.PGPORT,
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? {rejectUnauthorized: false } : undefined,
 });
 
-// Test database connection
+
 pool.connect()
   .then(client => {
-    logger.info('Successfully connected to PostgreSQL database');
+    logger.info('Successfully connected to the database via DATABASE_URL!!');
     client.release();
   })
   .catch(err => {
-    logger.error('Error connecting to database:', err);
+    logger.error('Error connecting to the database via DATABASE_URL:', err.stack);
   });
 
 module.exports = {

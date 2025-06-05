@@ -1,0 +1,27 @@
+usuário salvos e token.
+
+{
+        "user": {
+            "id": 4,
+            "username": "Pietro",
+            "email": "Pietro@teste.com",
+            "created_at": "2025-06-05T02:45:16.982Z"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0fSwiaWF0IjoxNzQ5MDkxNTE3LCJleHAiOjE3NDkwOTE1MjB9._z-PNDPpigAhpuwYzeYN0hp0Ji7N7NarAQgStMqcQlU"
+    }
+
+
+json sucesso login:
+{
+    "success": true,
+    "message": "Login successful",
+    "data": {
+        "user": {
+            "id": 4,
+            "username": "Pietro",
+            "email": "Pietro@teste.com",
+            "created_at": "2025-06-05T02:45:16.982Z"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo0fSwiaWF0IjoxNzQ5MDkyODIxLCJleHAiOjE3NDkwOTI4MjR9.hjX73OTHKE8LS-Qh-0f194M7bDU6Ug4ag0WwXqsMFdU"
+    }
+}

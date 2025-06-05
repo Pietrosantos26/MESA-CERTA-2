@@ -1,0 +1,32 @@
+
+                        TESTE POSTMAN
+
+POST -   http://localhost:3002/api/users/register      - para registrar usuários
+
+POST -   http://localhost:3002/api/users/login          - para fazer login
+
+GET -   http://localhost:3002/api/users/profile         - Obtenha o perfil do usuário atualn (token)
+
+PUT -   http://localhost:3002/api/users/profile         - atualiza o usuário (token)
+
+DELETE -   http://localhost:3002/api/users                - apaga UM USUÁRIO (tokne)
+
+POST -   http://localhost:3002/api/items                 - cria um item (precisa de token)
+
+GET  -   http://localhost:3002/api/items                  - lista os itens (precisa de token)
+
+GET  -   http://localhost:3002/api/items/{id}                   - lista um item pelo id dele (precisa de token)
+
+PUT  -   http://localhost:3002/api/items/{id}                 - atualiza um item específico (token!!!!)   
+
+PUT  -   http://localhost:3002/api/items/{id}                  - deleta um item (token necessário)
+
+
+
+
+
+
+
+Colocar o token na aba: headers.
+key: x-auth-token
+value: {o seu token criado}

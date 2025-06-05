@@ -26,3 +26,93 @@
 {"level":"info","message":"Successfully connected to PostgreSQL database","service":"express-mvp-api","timestamp":"2025-05-28 11:18:08"}
 {"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-05-28 11:19:14"}
 {"level":"info","message":"Successfully connected to PostgreSQL database","service":"express-mvp-api","timestamp":"2025-05-28 11:19:16"}
+{"level":"info","message":"Server running in undefined mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:10:08"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:10:08"}
+{"level":"info","message":"Server running in undefined mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:23:51"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:23:51"}
+{"level":"info","message":"Server running in undefined mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:24:09"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:24:09"}
+{"level":"info","message":"Server running in undefined mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:38:31"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:38:31"}
+{"level":"info","message":"Server running in undefined mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:38:54"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:38:54"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:40:05"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:40:05"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:40:53"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:40:53"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:42:38"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:42:38"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:42:53"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:42:53"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:44:24"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:44:24"}
+{"level":"error","message":"Not Found - //api/users/register - //api/users/register - POST - ::1","service":"express-mvp-api","timestamp":"2025-06-04 10:47:06"}
+{"level":"info","message":"\u001b[0mPOST //api/users/register \u001b[33m404\u001b[0m 39.580 ms - 1332\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 10:47:06"}
+{"level":"error","message":"Not Found - //api/users/register/ - //api/users/register/ - POST - ::1","service":"express-mvp-api","timestamp":"2025-06-04 10:47:46"}
+{"level":"info","message":"\u001b[0mPOST //api/users/register/ \u001b[33m404\u001b[0m 1.668 ms - 1334\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 10:47:46"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:57:59"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:57:59"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 10:58:05"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 10:58:05"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 36.900 ms - 81\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 10:58:16"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 11.556 ms - 81\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 10:59:42"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 7.028 ms - 81\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 11:00:06"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 22:58:52"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 22:58:52"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 23:14:10"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 23:14:10"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 23:15:20"}
+{"code":"ECONNREFUSED","level":"error","message":"Error connecting to database:","service":"express-mvp-api","stack":"AggregateError [ECONNREFUSED]: \n    at C:\\sitemesacerta\\Mesacertaa\\Mesacerta\\backend\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-06-04 23:15:20"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 23:17:16"}
+{"level":"info","message":"Successfully connected to PostgreSQL database","service":"express-mvp-api","timestamp":"2025-06-04 23:17:17"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 23:18:18"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-04 23:18:19"}
+{"level":"info","message":"Server running in development mode on port 3001","service":"express-mvp-api","timestamp":"2025-06-04 23:22:18"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-04 23:22:19"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-04 23:28:04"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-04 23:28:06"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 1487.868 ms - 158\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 23:29:41"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[33m400\u001b[0m 1256.305 ms - 76\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 23:33:36"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[33m400\u001b[0m 1072.264 ms - 76\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 23:35:43"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[31m500\u001b[0m 1319.508 ms - 158\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 23:36:16"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-04 23:43:19"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-04 23:43:21"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[33m400\u001b[0m 1181.848 ms - 76\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 23:43:41"}
+{"level":"info","message":"\u001b[0mPOST /api/users/register \u001b[32m201\u001b[0m 1417.165 ms - 329\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 23:45:17"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-04 23:57:58"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-04 23:57:59"}
+{"level":"error","message":"Not Found - /api/users/login%20 - /api/users/login%20 - POST - ::1","service":"express-mvp-api","timestamp":"2025-06-04 23:58:09"}
+{"level":"info","message":"\u001b[0mPOST /api/users/login%20 \u001b[33m404\u001b[0m 4.900 ms - 1304\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-04 23:58:09"}
+{"level":"info","message":"\u001b[0mPOST /api/users/login \u001b[32m200\u001b[0m 1306.740 ms - 317\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:01:45"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[33m401\u001b[0m 2.498 ms - 44\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:02:40"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[33m401\u001b[0m 0.303 ms - 44\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:02:54"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[33m401\u001b[0m 0.565 ms - 44\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:03:58"}
+{"level":"error","message":"Not Found - /users/login - /users/login - POST - ::1","service":"express-mvp-api","timestamp":"2025-06-05 00:05:25"}
+{"level":"info","message":"\u001b[0mPOST /users/login \u001b[33m404\u001b[0m 1.534 ms - 1316\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:05:25"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-05 00:05:50"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-05 00:05:51"}
+{"level":"error","message":"Not Found - /users/login - /users/login - POST - ::1","service":"express-mvp-api","timestamp":"2025-06-05 00:06:36"}
+{"level":"info","message":"\u001b[0mPOST /users/login \u001b[33m404\u001b[0m 2.836 ms - 1316\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:06:36"}
+{"level":"info","message":"\u001b[0mPOST /api/users/login \u001b[32m200\u001b[0m 1265.271 ms - 317\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:07:01"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[33m401\u001b[0m 0.558 ms - 44\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:08:25"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-05 00:21:57"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-05 00:21:59"}
+{"level":"info","message":"\u001b[0mPOST /api/users/login \u001b[32m200\u001b[0m 1410.476 ms - 317\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:22:34"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[33m401\u001b[0m 1.434 ms - 44\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:24:32"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[33m401\u001b[0m 1.541 ms - 44\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:24:46"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[33m401\u001b[0m 13.148 ms - 32\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:25:41"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-05 00:26:39"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-05 00:26:40"}
+{"level":"info","message":"\u001b[0mPOST /api/users/login \u001b[32m200\u001b[0m 1331.212 ms - 317\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:27:13"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[32m200\u001b[0m 1077.041 ms - 77\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:27:45"}
+{"level":"info","message":"\u001b[0mPOST /api/items \u001b[32m201\u001b[0m 1662.857 ms - 192\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:33:59"}
+{"level":"info","message":"\u001b[0mGET /api/items \u001b[32m200\u001b[0m 3614.216 ms - 226\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:34:18"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-05 00:50:12"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-05 00:50:14"}
+{"level":"info","message":"\u001b[0mGET /api-docs \u001b[36m301\u001b[0m 5.063 ms - 158\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:50"}
+{"level":"info","message":"\u001b[0mGET /api-docs/ \u001b[32m200\u001b[0m 4.688 ms - 3106\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:50"}
+{"level":"info","message":"\u001b[0mGET /api-docs/swagger-ui-init.js \u001b[32m200\u001b[0m 0.351 ms - 12574\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:50"}
+{"level":"info","message":"\u001b[0mGET /api-docs/swagger-ui.css \u001b[32m200\u001b[0m 13.783 ms - 154986\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:50"}
+{"level":"info","message":"\u001b[0mGET /api-docs/swagger-ui-standalone-preset.js \u001b[32m200\u001b[0m 7.362 ms - 229223\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:50"}
+{"level":"info","message":"\u001b[0mGET /api-docs/swagger-ui-bundle.js \u001b[32m200\u001b[0m 10.006 ms - 1484234\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:50"}
+{"level":"info","message":"\u001b[0mGET /api-docs/favicon-32x32.png \u001b[32m200\u001b[0m 4.938 ms - 628\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:51"}
