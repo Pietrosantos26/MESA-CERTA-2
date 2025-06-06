@@ -116,3 +116,25 @@
 {"level":"info","message":"\u001b[0mGET /api-docs/swagger-ui-standalone-preset.js \u001b[32m200\u001b[0m 7.362 ms - 229223\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:50"}
 {"level":"info","message":"\u001b[0mGET /api-docs/swagger-ui-bundle.js \u001b[32m200\u001b[0m 10.006 ms - 1484234\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:50"}
 {"level":"info","message":"\u001b[0mGET /api-docs/favicon-32x32.png \u001b[32m200\u001b[0m 4.938 ms - 628\u001b[0m","service":"express-mvp-api","timestamp":"2025-06-05 00:50:51"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 00:51:13"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 00:51:15"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:49:24"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:49:26"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:49:32"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:49:33"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:49:56"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:49:57"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:50:09"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:50:10"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:50:22"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:50:23"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:50:42"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:50:43"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:50:52"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:50:53"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:51:07"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:51:07"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:51:12"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:51:13"}
+{"level":"info","message":"Server running in development mode on port 3002","service":"express-mvp-api","timestamp":"2025-06-06 09:51:26"}
+{"level":"info","message":"Successfully connected to the database via DATABASE_URL!!","service":"express-mvp-api","timestamp":"2025-06-06 09:51:27"}
