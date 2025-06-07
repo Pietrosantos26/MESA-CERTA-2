@@ -1,60 +1,79 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect, useCallback } from 'react';
 import { Reservation } from '../types';
-import { reservations as initialReservations } from '../data/reservations';
 import { useAuth } from './AuthContext';
+import { getMyReservations, createReservation as createReservationAPI } from '../services/api';
 
 interface ReservationContextType {
   reservations: Reservation[];
-  userReservations: Reservation[];
-  addReservation: (reservation: Omit<Reservation, 'id' | 'createdAt' | 'status'>) => void;
-  cancelReservation: (id: string) => void;
-  getReservationById: (id: string) => Reservation | undefined;
-  getReservationsByRestaurant: (restaurantId: string) => Reservation[];
+  loading: boolean;
+  error: string | null;
+  addReservation: (reservationData: {
+    restaurantId: number;
+    reservationDate: string;
+    reservationTime: string;
+    guests: number;
+    specialRequests?: string;
+  }) => Promise<any>;
+  cancelReservation: (id: string) => Promise<void>;
 }
 
 const ReservationContext = createContext<ReservationContextType | undefined>(undefined);
 
 export const ReservationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [reservations, setReservations] = useState<Reservation[]>(initialReservations);
-  const { user } = useAuth();
+  const [reservations, setReservations] = useState<Reservation[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const { isAuthenticated, token } = useAuth();
 
-  const userReservations = user 
-    ? reservations.filter(res => res.userId === user.id)
-    : [];
-
-  const addReservation = (newReservation: Omit<Reservation, 'id' | 'createdAt' | 'status'>) => {
-    const reservation: Reservation = {
-      ...newReservation,
-      id: `${reservations.length + 1}`,
-      createdAt: new Date().toISOString(),
-      status: 'pending',
-    };
+  const fetchReservations = useCallback(async () => {
+    if (!isAuthenticated) {
+      setReservations([]);
+      setLoading(false);
+      return;
+    }
     
-    setReservations([...reservations, reservation]);
+    setLoading(true);
+    try {
+      const userReservations = await getMyReservations();
+      setReservations(userReservations);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [isAuthenticated, token]); // Depende do token também para re-fetch no login
+
+  useEffect(() => {
+    fetchReservations();
+  }, [fetchReservations]);
+
+  const addReservation = async (reservationData: any) => {
+    try {
+      const newReservation = await createReservationAPI(reservationData);
+      // Após criar, busca a lista atualizada de reservas
+      fetchReservations(); 
+      return newReservation; // Retorna para quem chamou
+    } catch (error) {
+      console.error("Falha ao criar reserva:", error);
+      throw error; // Lança o erro para ser tratado no formulário
+    }
   };
 
-  const cancelReservation = (id: string) => {
-    setReservations(reservations.map(res => 
-      res.id === id ? { ...res, status: 'cancelled' } : res
-    ));
-  };
-
-  const getReservationById = (id: string) => {
-    return reservations.find(res => res.id === id);
-  };
-
-  const getReservationsByRestaurant = (restaurantId: string) => {
-    return reservations.filter(res => res.restaurantId === restaurantId);
+  const cancelReservation = async (id: string) => {
+    // Lógica para chamar a API de cancelamento aqui
+    console.log("Cancelar reserva (API):", id);
+    // Exemplo: await cancelReservationAPI(id);
+    // Após cancelar, re-fetch as reservas
+    fetchReservations();
   };
 
   return (
-    <ReservationContext.Provider value={{ 
+    <ReservationContext.Provider value={{
       reservations,
-      userReservations,
+      loading,
+      error,
       addReservation,
-      cancelReservation,
-      getReservationById,
-      getReservationsByRestaurant
+      cancelReservation
     }}>
       {children}
     </ReservationContext.Provider>

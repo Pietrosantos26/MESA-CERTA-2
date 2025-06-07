@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const { setupSwagger } = require('./config/swagger');
+// const { setupSwagger } = require('./config/swagger');
 const logger = require('./utils/logger');
 const { notFoundHandler, errorHandler } = require('./middleware/errorMiddleware');
 const routes = require('./routes');
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(morgan('dev', { stream: { write: message => logger.info(message.trim()) } })); // Logging
 
 // Setup Swagger
-setupSwagger(app);
+// setupSwagger(app);
 
 // API Routes
 app.use('/api', routes);

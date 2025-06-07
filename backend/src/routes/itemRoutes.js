@@ -5,7 +5,7 @@ const itemPresenter = require('../presenters/itemPresenter');
 const { protect, validate } = require('../middleware/authMiddleware');
 
 /**
- * @swagger
+ *
  * components:
  *   schemas:
  *     Item:
@@ -37,7 +37,7 @@ const { protect, validate } = require('../middleware/authMiddleware');
  */
 
 /**
- * @swagger
+ *
  * /api/items:
  *   get:
  *     summary: Get all items for the authenticated user
@@ -56,7 +56,7 @@ router.get('/', protect, async (req, res) => {
 });
 
 /**
- * @swagger
+ *
  * /api/items:
  *   post:
  *     summary: Create a new item
@@ -104,7 +104,7 @@ router.post(
 );
 
 /**
- * @swagger
+ * 
  * /api/items/{id}:
  *   get:
  *     summary: Get an item by ID
@@ -133,7 +133,7 @@ router.get('/:id', protect, async (req, res) => {
 });
 
 /**
- * @swagger
+ * 
  * /api/items/{id}:
  *   put:
  *     summary: Update an item
@@ -187,7 +187,7 @@ router.put(
 );
 
 /**
- * @swagger
+ * 
  * /api/items/{id}:
  *   delete:
  *     summary: Delete an item

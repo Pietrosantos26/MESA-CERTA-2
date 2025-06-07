@@ -1,18 +1,22 @@
 const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator');
 
-// Protect routes
 const protect = (req, res, next) => {
-  // Get token from header
-  const token = req.header('x-auth-token');
+ let token;
 
-  // Check if no token
+ if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
+    token = req.headers.authorization.split(' ')[1];
+ }
+
+ else if (req.header('x-auth-token')){
+  token = req.header('x-auth-token');
+ }
+ 
   if (!token) {
     return res.status(401).json({ message: 'No token, authorization denied' });
   }
 
   try {
-    // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded.user;
     next();
@@ -21,7 +25,7 @@ const protect = (req, res, next) => {
   }
 };
 
-// Validate request
+
 const validate = (validations) => {
   return async (req, res, next) => {
     await Promise.all(validations.map(validation => validation.run(req)));

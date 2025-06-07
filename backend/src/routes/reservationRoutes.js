@@ -5,7 +5,7 @@ const reservationPresenter = require('../presenters/reservationPresenter');
 const { protect, validate } = require('../middleware/authMiddleware');
 
 /**
- * @swagger
+ *
  * /api/reservations:
  * post:
  * summary: Create a new reservation
@@ -63,7 +63,7 @@ router.post(
 );
 
 /**
- * @swagger
+ * 
  * /api/reservations/my-reservations:
  * get:
  * summary: Get all reservations for the authenticated user
@@ -82,7 +82,7 @@ router.get('/my-reservations', protect, async (req, res) => {
 });
 
 /**
- * @swagger
+ * 
  * /api/reservations/{id}/cancel:
  * put:
  * summary: Cancel a reservation

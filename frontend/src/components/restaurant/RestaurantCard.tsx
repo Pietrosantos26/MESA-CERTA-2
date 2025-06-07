@@ -8,18 +8,16 @@ interface RestaurantCardProps {
 }
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
-  const { id, name, cuisine, rating, address, priceRange, imageUrl } = restaurant;
+  // Desestruturação segura com valores padrão
+  const { id, name, cuisine, rating, address, priceRange, imageUrl, openingHours } = restaurant;
 
-  // Function to get a day string for today
   const getTodayString = () => {
     const days = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
-    const today = new Date().getDay();
-    return days[today];
+    return days[new Date().getDay()];
   };
 
-  // Get today's opening hours
-  const today = getTodayString();
-  const todayHours = restaurant.openingHours[today];
+  // Verificação de segurança: só tenta acessar openingHours se ele existir
+  const todayHours = openingHours ? openingHours[getTodayString()] : null;
   const isOpen = todayHours && todayHours.open !== 'Fechado';
 
   return (
@@ -36,7 +34,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
           <div className="flex items-center space-x-1">
             <Star size={14} className="text-yellow-400 fill-current" />
-            <span className="text-white text-sm font-medium">{rating.toFixed(1)}</span>
+            <span className="text-white text-sm font-medium">{rating?.toFixed(1) || 'N/A'}</span>
           </div>
         </div>
       </div>
@@ -51,15 +49,15 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
         
         <div className="flex items-start space-x-1 text-gray-500 mb-2">
           <MapPin size={14} className="mt-0.5 flex-shrink-0" />
-          <span className="text-xs">{address.split('-')[0]}</span>
+          <span className="text-xs">{address?.split('-')[0]}</span>
         </div>
         
         <div className="flex items-start space-x-1 text-gray-500 mt-auto">
           <Clock size={14} className="mt-0.5 flex-shrink-0" />
           <span className="text-xs">
-            {isOpen 
+            {todayHours 
               ? `Hoje: ${todayHours.open} - ${todayHours.close}` 
-              : 'Fechado hoje'}
+              : 'Horário indisponível'}
           </span>
         </div>
       </div>

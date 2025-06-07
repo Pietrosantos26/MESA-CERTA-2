@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, MapPin, ChevronRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import RestaurantCard from '../components/restaurant/RestaurantCard';
-import { restaurants } from '../data/restaurants';
+import { getRestaurants } from '../services/api';
+import { Restaurant } from '../types';
 
 const HomePage: React.FC = () => {
-  // Get featured restaurants (highest rated)
-  const featuredRestaurants = [...restaurants]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 3);
-  
+  const [featuredRestaurants, setFeaturedRestaurants] = useState<Restaurant[]>([]);
+  const [loading, setLoading] = useState(true);
+
+
+  useEffect(() => {
+    const fetchFeaturedRestaurants = async () => {
+      try {
+        const response = await getRestaurants();
+        if (response.success) {
+          // Pega os dados da API, ordena e pega os 3 melhores
+          const sorted = [...response.data.restaurants]
+            .sort((a: Restaurant, b: Restaurant) => b.rating - a.rating)
+            .slice(0, 3);
+          setFeaturedRestaurants(sorted);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar restaurantes em destaque:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFeaturedRestaurants();
+  }, []);
+
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -71,11 +93,15 @@ const HomePage: React.FC = () => {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredRestaurants.map((restaurant) => (
-              <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-            ))}
-          </div>
+          {loading ? (
+            <p>Carregando...</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredRestaurants.map((restaurant) => (
+                <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
       

@@ -3,7 +3,7 @@ const router = express.Router();
 const restaurantPresenter = require('../presenters/restaurantPresenter');
 
 /**
- * @swagger
+ * 
  * /api/restaurants:
  * get:
  * summary: Get all restaurants
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 });
 
 /**
- * @swagger
+ * 
  * /api/restaurants/{id}:
  * get:
  * summary: Get a restaurant by ID

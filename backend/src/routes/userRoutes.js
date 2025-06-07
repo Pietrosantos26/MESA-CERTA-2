@@ -5,7 +5,7 @@ const userPresenter = require('../presenters/userPresenter');
 const { protect, validate } = require('../middleware/authMiddleware');
 
 /**
- * @swagger
+ * 
  * components:
  *   schemas:
  *     User:
@@ -35,7 +35,7 @@ const { protect, validate } = require('../middleware/authMiddleware');
  */
 
 /**
- * @swagger
+ * 
  * /api/users/register:
  *   post:
  *     summary: Register a new user
@@ -77,7 +77,7 @@ router.post(
 );
 
 /**
- * @swagger
+ * 
  * /api/users/login:
  *   post:
  *     summary: Login a user
@@ -116,7 +116,7 @@ router.post(
 );
 
 /**
- * @swagger
+ * 
  * /api/users/profile:
  *   get:
  *     summary: Get current user profile
@@ -135,7 +135,7 @@ router.get('/profile', protect, async (req, res) => {
 });
 
 /**
- * @swagger
+ * 
  * /api/users/profile:
  *   put:
  *     summary: Update user profile
@@ -175,7 +175,7 @@ router.put(
 );
 
 /**
- * @swagger
+ * 
  * /api/users:
  *   delete:
  *     summary: Delete user account
