@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ChefHat, Mail, Lock, User, AlertCircle, Phone } from 'lucide-react';
+import { ChefHat, Mail, Lock, User, AlertCircle } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { useAuth } from '../context/AuthContext';
@@ -9,18 +9,17 @@ const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
   const { register } = useAuth();
   
-  const [name, setName] = useState('');
+ const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   
-  const handleSubmit = async (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!name || !email || !password || !confirmPassword) {
+    if (!username || !email || !password || !confirmPassword) {
       setError('Por favor, preencha todos os campos obrigatórios.');
       return;
     }
@@ -33,15 +32,11 @@ const RegisterPage: React.FC = () => {
     setIsLoading(true);
     setError('');
     
-    try {
-      await register(name, email, password);
+  try {
+      await register(username, email, password);
       navigate('/');
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError('Ocorreu um erro durante o cadastro. Tente novamente.');
-      }
+    } catch (err: any) {
+      setError(err.message || 'Ocorreu um erro durante o cadastro. Tente novamente.');
       setIsLoading(false);
     }
   };
@@ -72,10 +67,10 @@ const RegisterPage: React.FC = () => {
             <div>
               <Input
                 type="text"
-                label="Nome completo"
-                placeholder="Seu nome"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                label="Nome de usuário"
+                placeholder="Seu nome de usuário"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 leftIcon={<User size={18} />}
                 fullWidth
                 required
@@ -92,18 +87,6 @@ const RegisterPage: React.FC = () => {
                 leftIcon={<Mail size={18} />}
                 fullWidth
                 required
-              />
-            </div>
-            
-            <div>
-              <Input
-                type="tel"
-                label="Telefone (opcional)"
-                placeholder="(00) 00000-0000"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                leftIcon={<Phone size={18} />}
-                fullWidth
               />
             </div>
             

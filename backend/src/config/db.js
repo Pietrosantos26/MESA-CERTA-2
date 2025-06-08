@@ -1,17 +1,22 @@
-require('dotenv').config(); // Carrega as variáveis de ambiente 
+require('dotenv').config();
 const { Pool } = require('pg');
 const logger = require('../utils/logger');
 
-
+// Configuração da conexão com o banco de dados.
+// A principal mudança é a adição da configuração de SSL.
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === 'production' ? {rejectUnauthorized: false } : undefined,
+  ssl: {
+    // Exige SSL, mas não rejeita conexões de servidores com certificados autoassinados.
+    // Isso é padrão e necessário para se conectar a serviços como Neon e Heroku.
+    rejectUnauthorized: false,
+  },
 });
 
-
+// Testa a conexão ao iniciar
 pool.connect()
   .then(client => {
-    logger.info('Successfully connected to the database via DATABASE_URL!!');
+    logger.info('Successfully connected to the database via DATABASE_URL!');
     client.release();
   })
   .catch(err => {

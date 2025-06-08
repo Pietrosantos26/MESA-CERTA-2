@@ -90,18 +90,21 @@ class UserPresenter {
    */
   async updateProfile(userId, userData) {
     try {
-      // Check if user exists
-      const existingUser = await userModel.findById(userId);
-      if (!existingUser) {
+      const { username, email } = userData;
+      // Garante que estamos passando apenas os campos permitidos
+      const filteredUserData = { username, email };
+
+      const updatedUser = await userModel.update(userId, filteredUserData);
+      if (!updatedUser) {
         return formatError('User not found', 404);
       }
-      
-      // Update user
-      const updatedUser = await userModel.update(userId, userData);
-      
       return formatSuccess({ user: updatedUser }, 'User profile updated');
     } catch (error) {
-      return formatError('Error updating user profile: ' + error.message);
+        // Trata erro de email duplicado
+        if (error.code === '23505') {
+            return formatError('Email already in use.', 400);
+        }
+        return formatError('Error updating user profile: ' + error.message);
     }
   }
   
@@ -116,7 +119,6 @@ class UserPresenter {
       if (!deleted) {
         return formatError('User not found', 404);
       }
-      
       return formatSuccess(null, 'User deleted successfully');
     } catch (error) {
       return formatError('Error deleting user: ' + error.message);

@@ -1,24 +1,52 @@
-const db = require('../config/db');
+const reservationModel = require('../models/reservationModel');
+const { formatSuccess, formatError } = require('../utils/responseFormatter');
 
-class RestaurantModel {
+class ReservationPresenter {
   /**
-   * Encontrar todos os restaurantes
+   * Criar uma nova reserva
+   * @param {Object} reservationData - Dados da reserva, incluindo userId
    */
-  async findAll() {
-    const query = 'SELECT * FROM restaurants ORDER BY rating DESC';
-    const result = await db.query(query);
-    return result.rows;
+  async createReservation(reservationData) {
+    try {
+      const newReservation = await reservationModel.create(reservationData);
+      return formatSuccess({ reservation: newReservation }, 'Reservation created successfully');
+    } catch (error) {
+      if (error.code === '23503') {
+        return formatError('Restaurant not found or invalid data provided.', 404);
+      }
+      return formatError('Error creating reservation: ' + error.message);
+    }
   }
 
   /**
-   * Encontrar restaurante por ID
-   * @param {Number} id - ID do restaurante
+   * Obter reservas de um usuário
+   * @param {Number} userId - ID do usuário
    */
-  async findById(id) {
-    const query = 'SELECT * FROM restaurants WHERE id = $1';
-    const result = await db.query(query, [id]);
-    return result.rows[0];
+  async getUserReservations(userId) {
+    try {
+      const reservations = await reservationModel.findByUserId(userId);
+      return formatSuccess({ reservations }, 'User reservations retrieved successfully');
+    } catch (error) {
+      return formatError('Error getting user reservations: ' + error.message);
+    }
+  }
+
+  /**
+   * Cancelar uma reserva
+   * @param {Number} reservationId - ID da reserva
+   * @param {Number} userId - ID do usuário
+   */
+  async cancelReservation(reservationId, userId) {
+    try {
+      const updatedReservation = await reservationModel.updateStatus(reservationId, userId, 'cancelled');
+      if (!updatedReservation) {
+        return formatError('Reservation not found or you are not authorized to cancel it.', 404);
+      }
+      return formatSuccess({ reservation: updatedReservation }, 'Reservation cancelled successfully');
+    } catch (error) {
+      return formatError('Error cancelling reservation: ' + error.message);
+    }
   }
 }
 
-module.exports = new RestaurantModel();
+module.exports = new ReservationPresenter();

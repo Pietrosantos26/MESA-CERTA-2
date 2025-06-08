@@ -1,10 +1,11 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect, useCallback } from 'react';
 import { Reservation } from '../types';
 import { useAuth } from './AuthContext';
-import { getMyReservations, createReservation as createReservationAPI } from '../services/api';
+import { getMyReservations, createReservation as createReservationAPI } from '../services/api'; // Supondo que você também terá uma função para cancelar
 
+// Interface para o que o contexto vai fornecer
 interface ReservationContextType {
-  reservations: Reservation[];
+  userReservations: Reservation[];
   loading: boolean;
   error: string | null;
   addReservation: (reservationData: {
@@ -20,58 +21,62 @@ interface ReservationContextType {
 const ReservationContext = createContext<ReservationContextType | undefined>(undefined);
 
 export const ReservationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [reservations, setReservations] = useState<Reservation[]>([]);
+  const [userReservations, setUserReservations] = useState<Reservation[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { isAuthenticated, token } = useAuth();
+  const { isAuthenticated } = useAuth();
 
-  const fetchReservations = useCallback(async () => {
+  // Função para buscar as reservas da API
+  const fetchUserReservations = useCallback(async () => {
+    // Se o usuário não está logado, não há o que buscar.
     if (!isAuthenticated) {
-      setReservations([]);
+      setUserReservations([]); // Limpa as reservas
       setLoading(false);
       return;
     }
     
     setLoading(true);
+    setError(null);
     try {
-      const userReservations = await getMyReservations();
-      setReservations(userReservations);
+      const reservationsFromAPI = await getMyReservations();
+      setUserReservations(reservationsFromAPI);
     } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
-  }, [isAuthenticated, token]); // Depende do token também para re-fetch no login
+  }, [isAuthenticated]); // Roda novamente se o status de autenticação mudar
 
+  // Executa a busca quando o componente é montado ou a autenticação muda
   useEffect(() => {
-    fetchReservations();
-  }, [fetchReservations]);
+    fetchUserReservations();
+  }, [fetchUserReservations]);
 
   const addReservation = async (reservationData: any) => {
     try {
       const newReservation = await createReservationAPI(reservationData);
-      // Após criar, busca a lista atualizada de reservas
-      fetchReservations(); 
-      return newReservation; // Retorna para quem chamou
+      // Após criar uma nova reserva, busca a lista atualizada
+      fetchUserReservations();
+      return newReservation;
     } catch (error) {
-      console.error("Falha ao criar reserva:", error);
-      throw error; // Lança o erro para ser tratado no formulário
+      console.error("Falha ao criar reserva no contexto:", error);
+      throw error; // Re-lança o erro para o formulário poder tratar
     }
   };
 
   const cancelReservation = async (id: string) => {
-    // Lógica para chamar a API de cancelamento aqui
-    console.log("Cancelar reserva (API):", id);
-    // Exemplo: await cancelReservationAPI(id);
-    // Após cancelar, re-fetch as reservas
-    fetchReservations();
+    // Aqui viria a chamada para a API de cancelamento
+    // await cancelReservationAPI(id); 
+    // Após cancelar, busca a lista atualizada
+    console.log(`Cancelando reserva ${id}...`);
+    fetchUserReservations();
   };
 
   return (
     <ReservationContext.Provider value={{
-      reservations,
-      loading,
-      error,
+      userReservations, // Fornece a lista de reservas
+      loading,          // Fornece o estado de carregamento
+      error,            // Fornece o estado de erro
       addReservation,
       cancelReservation
     }}>

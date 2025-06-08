@@ -1,14 +1,15 @@
 export type User = {
-  id: string;
-  name: string;
+  id: string | number; // O ID vem como número do backend
+  username: string;     // Alterado de 'name' para 'username'
   email: string;
   phone?: string;
   imageUrl?: string;
-  role: 'customer' | 'restaurantOwner' | 'admin';
+  role?: 'customer' | 'restaurantOwner' | 'admin'; // Role é opcional
 };
 
+// ... resto dos seus tipos ...
 export type Restaurant = {
-  id: string;
+  id: string | number; // Também pode vir como número
   name: string;
   description: string;
   address: string;
@@ -16,7 +17,7 @@ export type Restaurant = {
   coverImageUrl?: string;
   cuisine: string;
   priceRange: '€' | '€€' | '€€€' | '€€€€';
-  rating: number;
+  rating: number | string; // Vem como string, precisa ser convertido
   totalReviews: number;
   openingHours: {
     [key: string]: {

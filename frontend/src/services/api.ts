@@ -87,7 +87,31 @@ export const getRestaurantById = async (id: string) => {
   return response.json();
 };
 
-// Você pode adicionar outras funções para a API aqui, como:
-// - getRestaurantById(id)
-// - cancelReservation(id)
-// ...e assim por diante.
+/**
+ * Atualiza o perfil do usuário autenticado.
+ */
+export const updateUserProfile = async (userData: { username?: string; email?: string }) => {
+  const response = await fetchWithAuth(`/users/profile`, {
+    method: 'PUT',
+    body: JSON.stringify(userData),
+  });
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || 'Falha ao atualizar perfil');
+  }
+  return response.json();
+};
+
+/**
+ * Deleta a conta do usuário autenticado.
+ */
+export const deleteUserAccount = async () => {
+  const response = await fetchWithAuth(`/users`, {
+    method: 'DELETE',
+  });
+   if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || 'Falha ao deletar a conta');
+  }
+  return response.json();
+};

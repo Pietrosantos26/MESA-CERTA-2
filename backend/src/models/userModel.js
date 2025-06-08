@@ -79,14 +79,12 @@ class UserModel {
    */
   async update(id, userData) {
     const { username, email } = userData;
-    
     const query = `
       UPDATE users
       SET username = $1, email = $2, updated_at = NOW()
       WHERE id = $3
       RETURNING id, username, email, created_at, updated_at
     `;
-    
     const result = await db.query(query, [username, email, id]);
     return result.rows[0];
   }
@@ -97,11 +95,7 @@ class UserModel {
    * @returns {Promise<Boolean>} Success status
    */
   async delete(id) {
-    const query = `
-      DELETE FROM users
-      WHERE id = $1
-    `;
-    
+    const query = 'DELETE FROM users WHERE id = $1';
     const result = await db.query(query, [id]);
     return result.rowCount > 0;
   }

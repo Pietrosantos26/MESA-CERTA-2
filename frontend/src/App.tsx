@@ -11,6 +11,7 @@ import MyReservationsPage from './pages/MyReservationsPage';
 import ReservationConfirmationPage from './pages/ReservationConfirmationPage';
 import { AuthProvider } from './context/AuthContext';
 import { ReservationProvider } from './context/ReservationContext';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/cadastro" element={<RegisterPage />} />
                 <Route path="/minhas-reservas" element={<MyReservationsPage />} />
                 <Route path="/reserva-confirmada" element={<ReservationConfirmationPage />} />
+                <Route path="/perfil" element={<ProfilePage />} />
               </Routes>
             </main>
             <Footer />

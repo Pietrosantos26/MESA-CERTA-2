@@ -165,12 +165,12 @@ router.put(
   '/profile',
   protect,
   validate([
-    body('username').trim().optional().notEmpty().withMessage('Username cannot be empty'),
+    body('username').optional().trim().notEmpty().withMessage('Username cannot be empty'),
     body('email').optional().isEmail().withMessage('Valid email is required')
   ]),
   async (req, res) => {
     const result = await userPresenter.updateProfile(req.user.id, req.body);
-    res.status(result.success ? 200 : result.status).json(result);
+    res.status(result.success ? 200 : (result.status || 500)).json(result);
   }
 );
 
@@ -192,7 +192,7 @@ router.put(
  */
 router.delete('/', protect, async (req, res) => {
   const result = await userPresenter.deleteUser(req.user.id);
-  res.status(result.success ? 200 : result.status).json(result);
+  res.status(result.success ? 200 : (result.status || 500)).json(result);
 });
 
 module.exports = router;

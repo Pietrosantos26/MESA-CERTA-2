@@ -5,30 +5,41 @@ import Button from '../components/ui/Button';
 import ReservationCard from '../components/reservation/ReservationCard';
 import { useReservations } from '../context/ReservationContext';
 import { useAuth } from '../context/AuthContext';
+import { Reservation } from '../types'; // Importando o tipo
 
 const MyReservationsPage: React.FC = () => {
   const navigate = useNavigate();
-  const { userReservations } = useReservations();
+  // Pegando os dados e estados do nosso novo contexto!
+  const { userReservations, loading, error } = useReservations(); 
   const { isAuthenticated } = useAuth();
   
-  // Redirect to login if not authenticated
+  // Redireciona se não estiver autenticado
   React.useEffect(() => {
-    if (!isAuthenticated) {
+    if (!loading && !isAuthenticated) {
       navigate('/login', { state: { from: '/minhas-reservas' } });
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, loading, navigate]);
   
-  // Group reservations by status
+  // Tratando estados de carregamento e erro
+  if (loading) {
+    return <div className="min-h-screen pt-24 text-center">Carregando suas reservas...</div>;
+  }
+  
+  if (error) {
+    return <div className="min-h-screen pt-24 text-center text-red-500">Erro ao carregar reservas: {error}</div>;
+  }
+  
+  // Filtra as reservas APENAS depois de garantir que não há erro e não está carregando
   const upcomingReservations = userReservations.filter(
-    res => ['confirmed', 'pending'].includes(res.status)
+    (res: Reservation) => ['confirmed', 'pending'].includes(res.status)
   );
   
   const pastReservations = userReservations.filter(
-    res => ['completed', 'cancelled'].includes(res.status)
+    (res: Reservation) => ['completed', 'cancelled'].includes(res.status)
   );
   
   if (!isAuthenticated) {
-    return null; // Don't render anything while redirecting
+    return null; // Não renderiza nada enquanto redireciona
   }
   
   return (
@@ -43,64 +54,30 @@ const MyReservationsPage: React.FC = () => {
         
         {userReservations.length === 0 ? (
           <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-            <div className="mx-auto w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-              <CalendarX size={32} className="text-primary-600" />
-            </div>
+            {/* ... seu JSX para quando não há reservas ... */}
             <h2 className="mt-4 text-lg font-medium text-gray-900">Nenhuma reserva encontrada</h2>
-            <p className="mt-2 text-gray-500 max-w-md mx-auto">
-              Você ainda não fez nenhuma reserva. Explore nossos restaurantes e faça sua primeira reserva agora!
-            </p>
-            <div className="mt-6">
-              <Link to="/restaurantes">
-                <Button>
-                  Explorar Restaurantes
-                </Button>
-              </Link>
-            </div>
           </div>
         ) : (
           <div className="space-y-8">
-            {/* Upcoming Reservations */}
+            {/* Seção de Próximas Reservas */}
             <section>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <CalendarCheck size={20} className="text-primary-600 mr-2" />
-                  <h2 className="text-xl font-semibold text-gray-900">Próximas Reservas</h2>
-                </div>
-                <Link to="/restaurantes">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    leftIcon={<PlusCircle size={16} />}
-                  >
-                    Nova Reserva
-                  </Button>
-                </Link>
-              </div>
-              
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">Próximas Reservas</h2>
               {upcomingReservations.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {upcomingReservations.map((reservation) => (
+                    // Você precisará ajustar o ReservationCard para receber os novos dados da API
                     <ReservationCard key={reservation.id} reservation={reservation} />
                   ))}
                 </div>
               ) : (
-                <div className="bg-white rounded-lg shadow-sm p-6 text-center">
-                  <p className="text-gray-500">
-                    Você não tem reservas futuras. Que tal fazer uma nova reserva?
-                  </p>
-                </div>
+                <p className="text-gray-500">Você não tem reservas futuras.</p>
               )}
             </section>
             
-            {/* Past Reservations */}
+            {/* Seção de Histórico de Reservas */}
             {pastReservations.length > 0 && (
               <section>
-                <div className="flex items-center mb-4">
-                  <History size={20} className="text-gray-500 mr-2" />
-                  <h2 className="text-xl font-semibold text-gray-900">Histórico de Reservas</h2>
-                </div>
-                
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">Histórico de Reservas</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {pastReservations.map((reservation) => (
                     <ReservationCard key={reservation.id} reservation={reservation} />

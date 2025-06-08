@@ -8,7 +8,6 @@ interface RestaurantCardProps {
 }
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
-  // Desestruturação segura com valores padrão
   const { id, name, cuisine, rating, address, priceRange, imageUrl, openingHours } = restaurant;
 
   const getTodayString = () => {
@@ -16,9 +15,11 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
     return days[new Date().getDay()];
   };
 
-  // Verificação de segurança: só tenta acessar openingHours se ele existir
   const todayHours = openingHours ? openingHours[getTodayString()] : null;
   const isOpen = todayHours && todayHours.open !== 'Fechado';
+
+  // Converte o rating (que pode ser string ou number) para número antes de usar.
+  const numericRating = typeof rating === 'string' ? parseFloat(rating) : rating;
 
   return (
     <Link 
@@ -34,7 +35,10 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
           <div className="flex items-center space-x-1">
             <Star size={14} className="text-yellow-400 fill-current" />
-            <span className="text-white text-sm font-medium">{rating?.toFixed(1) || 'N/A'}</span>
+            {/* CORREÇÃO AQUI: Usamos a variável numérica */}
+            <span className="text-white text-sm font-medium">
+              {numericRating ? numericRating.toFixed(1) : 'N/A'}
+            </span>
           </div>
         </div>
       </div>
